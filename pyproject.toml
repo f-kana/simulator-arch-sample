@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "simulator-arch-sample"
+version = "0.1.0"
+description = "sample arch"
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.6.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.ruff]
+target-version = "py311"
+line-length = 120
+
+# Exclude specific files or directories
+exclude = ["tests/*", "docs/*"]
+
+# Enable autofix (formatter) for specific rules
+fixable = ["E", "F"]
+
+# (Both of Ruff linter and formatter ignore followings; still pylint checks similar rules)
+ignore = [
+    "F401"  # Ignore unused imports
+]
+
+
+[tool.pylint]
+# Enable specific pylint messages
+disable = [
+    "C0114",  # Missing module docstring
+    "C0115",  # Missing class docstring
+    "C0116",  # Missing function or method docstring
+]
